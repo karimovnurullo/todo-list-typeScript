@@ -13,6 +13,14 @@
 body {
    font-family: "Concord W00 Regular", sans-serif !important;
 }
+.link{
+   text-align: center;
+   font-size: 12px;
+   color: #fff;
+   opacity: 0.5;
+   letter-spacing: 1px;
+   margin-bottom: -10px;
+}
 
 .alert {
    position: absolute;
@@ -203,7 +211,7 @@ button:active{
    .container{
       .form{
          width: 95%;
-         height: 95vh;
+         height: 80vh;
       }
    }
 }

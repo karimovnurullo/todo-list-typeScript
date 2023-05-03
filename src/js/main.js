@@ -39,6 +39,7 @@ function clearAllTasks() {
             currentTaskElement.classList.add("animate__bounceOut");
             setTimeout(function () {
                 currentTaskElement.remove();
+                count.textContent = tasks.length.toString();
                 saveTask();
             }, 1000);
         }, i * 250);
@@ -94,6 +95,7 @@ function addListitem(task) {
             if (index !== -1) {
                 tasks.splice(index, 1);
                 saveTask();
+                count.textContent = tasks.length.toString();
                 label.classList.add("animate__bounceOut");
                 setTimeout(function () {
                     label.classList.remove("animate__bounceOut");

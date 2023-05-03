@@ -43,20 +43,21 @@ clearBtn.addEventListener('click', clearAllTasks);
 function clearAllTasks(): void {
    const tasksElements = document.querySelectorAll(".form-bottom-item");
    for (let i = 0; i < tasks.length; i++) {
-     setTimeout(() => {
-       const currentTaskElement = tasksElements[i];
-       currentTaskElement.classList.add("animate__bounceOut");
-       setTimeout(() => {
-         currentTaskElement.remove();
-         saveTask();
-       }, 1000);
-     }, i * 250);
+      setTimeout(() => {
+         const currentTaskElement = tasksElements[i];
+         currentTaskElement.classList.add("animate__bounceOut");
+         setTimeout(() => {
+            currentTaskElement.remove();
+            count.textContent = tasks.length.toString();
+            saveTask();
+         }, 1000);
+      }, i * 250);
    }
    setTimeout(() => {
-     tasks = [];
-     saveTask();
+      tasks = [];
+      saveTask();
    }, tasks.length * 250);
- }
+}
 
 function addListitem(task: Task) {
    count.textContent = tasks.length.toString();
@@ -107,6 +108,8 @@ function addListitem(task: Task) {
          if (index !== -1) {
             tasks.splice(index, 1);
             saveTask();
+            count.textContent = tasks.length.toString();
+
             label.classList.add("animate__bounceOut");
             setTimeout(() => {
                label.classList.remove("animate__bounceOut");
